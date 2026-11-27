@@ -1,0 +1,6 @@
+feedparser
+requests
+PyYAML
+streamlit
+APScheduler
+pytest

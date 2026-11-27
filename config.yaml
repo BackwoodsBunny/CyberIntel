@@ -1,0 +1,45 @@
+application:
+  name: CyberIntel
+  refresh_interval_minutes: 15
+  database: data/intelligence.db
+
+# NOTE: credibility values are placeholders pending defensible criteria.
+sources:
+  - name: BleepingComputer
+    url: https://www.bleepingcomputer.com/feed/
+    category: news
+    credibility: 0.85
+
+  - name: The DFIR Report
+    url: https://thedfirreport.com/feed/
+    category: threat_intelligence
+    credibility: 0.95
+
+  - name: Microsoft Security
+    url: https://www.microsoft.com/en-us/security/blog/feed/
+    category: research
+    credibility: 0.90
+
+ranking:
+  weights:
+    relevance: 0.30
+    significance: 0.25
+    recency: 0.15
+    credibility: 0.15
+    novelty: 0.10
+    technical_depth: 0.05
+  recency_half_life_hours: 48
+
+# NOTE: interest weights are placeholders.
+interests:
+  threat_actors: 1.0
+  ransomware: 0.9
+  artificial_intelligence: 0.9
+  zero_day: 0.8
+  geopolitical_threats: 0.8
+  data_breaches: 0.7
+
+watchlist:
+  - LockBit
+  - Scattered Spider
+  - Blue Mockingbird
